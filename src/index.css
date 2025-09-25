@@ -1,0 +1,25 @@
+@import "tailwindcss";
+.padding p{
+    padding: 10px;
+
+}
+
+.navbar{
+    @apply flex justify-around items-center;
+}
+
+.container{
+    @apply max-w-10/12 mx-auto;
+}
+
+.grays p , a{
+    @apply text-gray-400 py-3 cursor-pointer;
+}
+
+.grays i{
+    @apply text-white mr-2;
+}
+
+.grays h3{
+    @apply text-2xl text-white font-semibold;
+}
