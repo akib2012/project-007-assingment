@@ -22,7 +22,7 @@ const FetchTicketsData = fetch('/TicketData.json')
 
 function App() {
   // const [Handlecard, setHandlecard] = useState();
-
+  const [tickets, setTickets] = useState([]);
   const [cardClicked, setCardClicked] = useState([]);
   const [resolvers, setResolvers] = useState([]);
 
@@ -30,18 +30,29 @@ function App() {
     const newlist = [...cardClicked, list]
 
     setCardClicked(newlist);
+    // console.log(cardClicked);
 
   }
   const removecard = (issus) => {
     const filtercard = cardClicked.filter(issu => issu.id !== issus.id);
     setCardClicked(filtercard);
+    
   }
 
   const resolver = (Resolve) => {
 
     const newresolve = [...resolvers, Resolve]
     setResolvers(newresolve)
+
   }
+
+  const removeticket = (task, list) => {
+   
+    
+    
+
+  }
+  
 
 
 
@@ -59,12 +70,12 @@ function App() {
           <Box cardClicked={cardClicked} resolvers={resolvers}></Box>
 
           {/* ticket continer sections */}
-          <div className='container grid grid-cols-12 gap-5'>
+          <div className='container grid grid-cols-4 sm:grid-cols-12 gap-5'>
             <Suspense fallback="loading ticktes data .......">
-              <Tickets cardClicked={cardClicked} handleClicked={handleClicked} setCardClicked={setCardClicked} FetchTicketsData={FetchTicketsData}></Tickets>
+              <Tickets removeticket={removeticket} tickets={tickets} setTickets={setTickets} cardClicked={cardClicked} handleClicked={handleClicked} setCardClicked={setCardClicked} FetchTicketsData={FetchTicketsData}></Tickets>
             </Suspense>
 
-            {/* task bar working here */}
+            {/* task bar working here */}   
             <div className='col-span-4 '>
               <h3 className='text-3xl font-semibold mb-4'>Task Status</h3>
               {
@@ -75,6 +86,7 @@ function App() {
                         crd={crd}
                         resolver={resolver}
                         removecard={removecard}
+                        removeticket={removeticket}
                       />
                     </Suspense>
                   ))
@@ -107,7 +119,7 @@ function App() {
         <Footer></Footer>
        
       </div>
-      <ToastContainer></ToastContainer>
+      <ToastContainer/>
     </>
   )
 }

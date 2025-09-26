@@ -3,7 +3,7 @@ import React from 'react';
 const Footer = () => {
     return (
         <div className='bg-black mb-0'>
-            <div className='grid grid-cols-2 gap-9 sm:grid-cols-5  container text-white py-11 grays'>
+            <div className='grid grid-cols-2 gap-9 sm:grid-cols-5  container text-white py-11 grays mt-5'>
                 <div>
                     <h3>CS — Ticket System</h3>
                     <p className='max-w-[250px] text-justify'>The CS Ticket Counter is your one-stop solution for booking tickets to university events, seminars, and cultural programs. It allows users to reserve tickets quickly, securely, and easily. With the ticket counter, you can enjoy hassle-free access to all events and never miss out on any university activity.</p>
@@ -32,10 +32,10 @@ const Footer = () => {
                 </div>
                 <div className='flex flex-col'>
                     <h3>Social Links</h3>
-                    <a href=""><i class="fa-brands fa-x-twitter"></i>@CS — Ticket System</a>
-                    <a href=""><i class="fa-brands fa-linkedin"></i>@CS — Ticket System</a>
-                    <a href=""><i class="fa-brands fa-facebook"></i>@CS — Ticket System</a>
-                    <a href=""><i class="fa-solid fa-square-envelope"></i>support@cst.com</a>
+                    <a href=""><i className="fa-brands fa-x-twitter"></i>@CS — Ticket System</a>
+                    <a href=""><i className="fa-brands fa-linkedin"></i>@CS — Ticket System</a>
+                    <a href=""><i className="fa-brands fa-facebook"></i>@CS — Ticket System</a>
+                    <a href=""><i className="fa-solid fa-square-envelope"></i>support@cst.com</a>
 
                 </div>
 

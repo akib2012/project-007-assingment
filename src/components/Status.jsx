@@ -1,11 +1,14 @@
 import React, { use, } from 'react';
+import { toast } from 'react-toastify';
 
-const Status = ({ crd, removecard, resolver }) => {
+const Status = ({ crd, removecard, resolver,removeticket }) => {
     // console.log(crd);
 
     const deletcards = () => {
         removecard(crd);
         resolver(crd);
+        toast("Complted");
+        removeticket(crd);
         
         
     }
@@ -13,7 +16,7 @@ const Status = ({ crd, removecard, resolver }) => {
 
 
     return (
-        <div className='mt-[30px]'>
+        <div className='mt-[30px] '>
             <div className=' bg-white h-fit p-3 rounded-xl '>
                 <div className='p-3 bg-gray-100  rounded-2xl shadow mt-6'>
                     <h3>{crd.title}</h3>

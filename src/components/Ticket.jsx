@@ -1,23 +1,27 @@
 import React, { useState } from 'react';
+import { toast } from 'react-toastify';
 
 
-const Ticket = ({ list, cardClicked, setCardClicked, handleClicked, ResolverClicked, handleresolver }) => {
-    const   [statusbar, setStatusbar] = useState(false)
-    
+const Ticket = ({ list, handleClicked, removeticket }) => {
+    // setStatusbar([list]);
+    removeticket(list);
+
+    const [statusbar, setStatusbar] = useState(false)
+    // removetaskticket(list);
 
     return (
 
         <div>
 
-            <div onClick={() => handleClicked(list,setStatusbar(true))} className="bg-white shadow rounded-lg p-4 w-[500px]">
+            <div onClick={() => handleClicked(list, setStatusbar(true), toast("In- Progress"))} className="bg-white shadow rounded-lg p-4 w-[360px] sm:w-[500px]">
                 {/* Title & Status */}
                 <div className="flex justify-between items-center">
                     <h2 className="text-lg font-semibold text-gray-900">
                         {list.title}
                     </h2>
-                    <span className= {`flex items-center gap-1 ${statusbar ? "bg-yellow-200 text-yellow-600" : "bg-green-200 text-green-600"} text-sm font-medium px-3 py-1 rounded-full`}>
+                    <span className={`flex items-center gap-1 ${statusbar ? "bg-yellow-200 text-yellow-600" : "bg-green-200 text-green-600"} text-sm font-medium px-3 py-1 rounded-full`}>
                         <span className={`h-2 w-2 ${statusbar ? " bg-yellow-300" : " bg-green-500"} rounded-full`}></span>
-                        {statusbar ? "In- Progress" : "open"}
+                        {statusbar ? "In- Progress!!" : "open"}
                     </span>
                 </div>
 
