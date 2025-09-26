@@ -37,6 +37,7 @@ function App() {
     const filtercard = cardClicked.filter(issu => issu.id !== issus.id);
     setCardClicked(filtercard);
     
+    
   }
 
   const resolver = (Resolve) => {
@@ -46,13 +47,11 @@ function App() {
 
   }
 
-  const removeticket = (task, list) => {
-   
-    
-    
-
+   const removeticket = (task) => {
+    console.log(task)
+    const updatedTickets = tickets.filter(t => t.displayId !== task.displayId);
+    setTickets(updatedTickets);
   }
-  
 
 
 

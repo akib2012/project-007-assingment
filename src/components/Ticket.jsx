@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { toast } from 'react-toastify';
 
 
-const Ticket = ({ list, handleClicked, removeticket }) => {
+const Ticket = ({ list, handleClicked }) => {
     // setStatusbar([list]);
-    removeticket(list);
+    // removeticket(list);
 
     const [statusbar, setStatusbar] = useState(false)
     // removetaskticket(list);
