@@ -14,7 +14,7 @@ const Tickets = ({ FetchTicketsData, cardClicked, setCardClicked, handleClicked,
   return (
     <div className='col-span-8 '>
 
-      <h3>Customer Tickets</h3> <br />
+      <h3 className="text-3xl font-semibold">Customer Tickets</h3> <br />
       <div className="grid grid-cols-1 sm:grid-cols-2 mx-auto gap-5 my-6">
         {
           tickets.map((list, id) => {
